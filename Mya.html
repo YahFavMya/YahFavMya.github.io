@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='"https://fonts.googleapis.com/css?family=Bowlby+One+SC|Cabin+Condensed|Luckiest+Guy|Press+Start+2P"' rel='stylesheet' type='text/css'>
+<style>
+ul {
+  padding: 10px;
+  text-align: center;
+}
+li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+  font-family: 'Pacifico', cursive;
+}
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: url("https://www.muralswallpaper.com/app/uploads/cracked-natural-marble-textures-plain.jpg");
+}
+div {
+  height: 400px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: black;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: black;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<ul>
+      <li><button onclick=Entrees()>Entrees</button></li>
+      <li><button onclick=Sides()>Sides</button></li>
+      <li><button onclick=Dessert()>Dessert</button></li>
+
+</ul>
+
+<h1>Mya's Eatery</h1>
+<h2>The best place to eat!</h2>
+
+<div id="Resturant">  
+</div>
+
+
+<script>
+  EntreesImages = [
+                        'url("https://frontnews.eu/contents/news/3500/images/resize_soUECpyMaFtPhTg4YuwcZ3bqV8NLAvQK_980x590.jpg")',
+                        'url("https://www.askchefdennis.com/wp-content/uploads/2011/02/buffalo-wings-102-680x382.jpg")',
+                        'url("https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/pass/the-ultimate-hamburger.jpg")',               ]
+                        
+  SidesImages = [
+                        'url("https://www.ajc.com/rf/image_inline/Pub/p8/AccessAtlanta/2017/07/12/Images/FOOD_NTR-TODDLERS-FRIES_WI.jpg")',
+                        'url("https://lifeloveandgoodfood.com/wp-content/uploads/2015/06/onion-rings1.jpg")',
+                        'url("https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg")',               ]
+                        
+  DessertImages = [
+                        'url("https://prettysimplesweet.com/wp-content/uploads/2018/06/Black-Forest-Cake-Recipe.jpg")',
+                        'url("https://sallysbakingaddiction.com/wp-content/uploads/2013/09/best-pumpkin-chocolate-chip-cookies.jpg")',
+                        'url("http://blogs.discovermagazine.com/80beats/files/2011/07/Jello.jpg")',               ]
+                        
+  EntreesDivs = [ 
+                    '<div class="item"><p>Pineapple Pizza<span class="price">$12</span><br /><small> Sweet pineapple on a savory pizza that will leave your mouth watering!</small></p></div>',
+                    '<div class="item"><p>Hot Wings<span class="price">$9</span><br /><small> Hot Spicy Bufffalo wings. The Best in town!</small></p></div>',
+                    '<div class="item"><p>Cheeseburger<span class="price">$3</span><br /><small> A juicy Burger with cheese  including lettuce and tomatos. Chefs specialty!</small></p></div>',
+                      ]
+  SidesDivs = [ 
+                    '<div class="item"><p>French Fries<span class="price">$1.50</span><br /><small> Nice and crispy potato strips </small></p></div>',
+                    '<div class="item"><p>Onion Rings<span class="price">$2.50</span><br /><small> Onion rings, Breaded and Fried</small></p></div>',
+                    '<div class="item"><p>Vegetables<span class="price">$4</span><br /><small> A variety of colorful, tasty, and fresh vegetables picked individually from our garden</small></p></div>',
+                      ]
+  DessertDivs = [ 
+                    '<div class="item"><p>Chocolate Cake<span class="price">$35</span><br /><small> A nice rich flavorerd cake and homeade chocolate is used </small></p></div>',
+                    '<div class="item"><p>Chocolate Chip Cookies<span class="price">$5</span><br /><small> Freshly Baked Chocolate chip cookies</small></p></div>',
+                    '<div class="item"><p>Jell-O<span class="price">$5</span><br /><small> A beautiful variety of jell-o</small></p></div>',
+                      ]
+  
+                        
+function Entrees() {
+  	  eat= document.getElementById("Resturant")
+  	  eat.innerHTML = ''
+	    eat.innerHTML += EntreesDivs[0]
+    	eat.innerHTML += EntreesDivs[1]
+    	eat.innerHTML += EntreesDivs[2]
+
+
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = EntreesImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  } 
+} 
+
+function Sides() {
+      a= document.getElementById("Resturant")
+  	  a.innerHTML = ''
+	    a.innerHTML += SidesDivs[0]
+    	a.innerHTML += SidesDivs[1]
+    	a.innerHTML += SidesDivs[2]
+
+	items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = SidesImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  }
+} 
+
+function Dessert() {
+      b= document.getElementById("Resturant")
+  	  b.innerHTML = ''
+	    b.innerHTML += DessertDivs[0]
+    	b.innerHTML += DessertDivs[1]
+    	b.innerHTML += DessertDivs[2]
+
+	items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = DessertImages[i]
+  	items[i].style.backgroundSize = '100% 100%'
+  }
+} 
+
+ 
+
+
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
