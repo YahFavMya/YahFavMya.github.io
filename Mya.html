@@ -55,19 +55,15 @@ p {
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
 }
-
 small {
   opacity: 0;
 }
-
 .show-description p {
   height: 150px;
 }
-
 .show-description small {
   opacity: 1;
 }
-
 .price {
   float: right;
 }
@@ -92,7 +88,6 @@ small {
     font-size: 16px;
   }
 }
-
 </style>
 
 </head>
@@ -103,6 +98,7 @@ small {
       <li><button onclick=Entrees()>Entrees</button></li>
       <li><button onclick=Sides()>Sides</button></li>
       <li><button onclick=Dessert()>Dessert</button></li>
+	  <li><button onclick=Beverages()>Beverages</button></li>
 
 </ul>
 
@@ -128,6 +124,11 @@ small {
                         'url("https://prettysimplesweet.com/wp-content/uploads/2018/06/Black-Forest-Cake-Recipe.jpg")',
                         'url("https://sallysbakingaddiction.com/wp-content/uploads/2013/09/best-pumpkin-chocolate-chip-cookies.jpg")',
                         'url("http://blogs.discovermagazine.com/80beats/files/2011/07/Jello.jpg")',               ]
+	BeveragesImages = [
+		
+'url("https://media.self.com/photos/5b7aed6b37ff4e0e38e2ef4f/4:3/w_728,c_limit/woman-holding-water-bottles.jpg")',                           ]
+'url("https://static1.squarespace.com/static/580a9429d482e99f8e3846e1/t/5a452d279140b74c0176ddc8/1515119481052/soda-bottles-and-cans.jpg")',                             ]
+'url("https://cdn.shopify.com/s/files/1/1636/0447/products/smoothies_1000_05847eb8-70ff-47a0-a1d7-84763b72009b_530x@2x.jpg?v=1501800628")',                          ]
                         
   EntreesDivs = [ 
                     '<div class="item" onclick=this.classList.toggle("show-description")><p>Pineapple Pizza<span class="price">$12</span><br /><small> Sweet pineapple on a savory pizza that will leave your mouth watering!</small></p></div>',
@@ -144,6 +145,17 @@ small {
                     '<div class="item" onclick=this.classList.toggle("show-description")><p>Chocolate Chip Cookies<span class="price">$5</span><br /><small> Freshly Baked Chocolate chip cookies</small></p></div>',
                     '<div class="item" onclick=this.classList.toggle("show-description")><p>Jell-O<span class="price">$5</span><br /><small> A beautiful variety of jell-o</small></p></div>',
                       ]
+	BeveragesDivs = [
+		                  '<div class="item"
+onclick=this.classList.toggle("show-description")><p>Water<span
+class="price">Free</span><br /><small</small></p></div',
+		                  '<div class="item"
+onclick=this.classList.toggle("show-description")><p>Soda<span
+class="price">$2.50</span><br /><small</small></p></div',
+		                  '<div class="item"
+onclick=this.classList.toggle("show-description")><p>Fruit Smoothie<span
+class="price">$2.50</span><br /><small</small></p></div',
+		                  
   
                         
 function Entrees() {
@@ -152,47 +164,37 @@ function Entrees() {
 	    eat.innerHTML += EntreesDivs[0]
     	eat.innerHTML += EntreesDivs[1]
     	eat.innerHTML += EntreesDivs[2]
-
-
   items = document.getElementsByClassName("item")
   for (i=0; i<3; i=i+1) {
 		items[i].style.background = EntreesImages[i]
 		items[i].style.backgroundSize = '100% 100%'
   } 
 } 
-
 function Sides() {
       a= document.getElementById("Resturant")
   	  a.innerHTML = ''
 	    a.innerHTML += SidesDivs[0]
     	a.innerHTML += SidesDivs[1]
     	a.innerHTML += SidesDivs[2]
-
 	items = document.getElementsByClassName("item")
   for (i=0; i<3; i=i+1) {
 		items[i].style.background = SidesImages[i]
 		items[i].style.backgroundSize = '100% 100%'
   }
 } 
-
 function Dessert() {
       b= document.getElementById("Resturant")
   	  b.innerHTML = ''
 	    b.innerHTML += DessertDivs[0]
     	b.innerHTML += DessertDivs[1]
     	b.innerHTML += DessertDivs[2]
-
 	items = document.getElementsByClassName("item")
   for (i=0; i<3; i=i+1) {
 		items[i].style.background = DessertImages[i]
   	items[i].style.backgroundSize = '100% 100%'
   }
 } 
-
  
-
-
-
   $('div').on('click', function() {
       $(this).toggleClass('show-description');
   });
