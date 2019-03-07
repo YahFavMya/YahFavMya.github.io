@@ -126,8 +126,9 @@ small {
                         'url("http://blogs.discovermagazine.com/80beats/files/2011/07/Jello.jpg")',               ]
 	BeveragesImages = [
 		
-'url("https://media.self.com/photos/5b7aed6b37ff4e0e38e2ef4f/4:3/w_728,c_limit/woman-holding-water-bottles.jpg")',                           ]
-'url("https://static1.squarespace.com/static/580a9429d482e99f8e3846e1/t/5a452d279140b74c0176ddc8/1515119481052/soda-bottles-and-cans.jpg")',                             ]
+'url("https://media.self.com/photos/5b7aed6b37ff4e0e38e2ef4f/4:3/w_728,c_limit/woman-holding-water-bottles.jpg")',   ]
+'url("https://static1.squarespace.com/static/580a9429d482e99f8e3846e1/t/5a452d279140b74c0176ddc8/1515119481052/soda-bottles-and-cans.jpg")',  ]
+                           
 'url("https://cdn.shopify.com/s/files/1/1636/0447/products/smoothies_1000_05847eb8-70ff-47a0-a1d7-84763b72009b_530x@2x.jpg?v=1501800628")',                          ]
                         
   EntreesDivs = [ 
@@ -194,8 +195,20 @@ function Dessert() {
   	items[i].style.backgroundSize = '100% 100%'
   }
 } 
- 
-  $('div').on('click', function() {
+function Beverages() {
+	b= document.getElementById("Resturant")
+	b.innerHTML = ''
+	  b.innerHTML += BeveragesDivs[0]
+	  b.innerHTML += BeveragesDivs[1]
+	  b.innerHTML += BeveragesDivs[2]
+  items = document.getElementByClassName("item")
+	for (i=0; i<3; i=i+1) {
+		  items[i].style.background = BeveragesImages[i]
+	 items[i].style.backgroundSize = '100% 100%'
+	}
+}
+	
+$('div').on('click', function() {
       $(this).toggleClass('show-description');
   });
 </script>
