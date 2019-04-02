@@ -165,11 +165,16 @@
   <script src="js/wow.js"></script>
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
-    <script> 
-    function snail(){
-          alert("Snail Has Been Activated")
-    }
-      </script>
+    <script>
+	items = document.getElementsByClassName("item") 
+function snail(){
+	items[0].innerHTML="I took this picture"
+	///alert("Snail Has Been Activated")
+}
+</script>
+<div>
+	class="item"
+</div>
 </body>
 
 </html>
