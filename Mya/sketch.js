@@ -160,11 +160,11 @@ function draw() {
   circle(h,w,100)
   }
   else {
-    yourname.innerHTML = "Name?<input id=bottle><button onclick='restart()'>Restart</button>"
-	  <button onclick=generate_alltime_leaderboard()></button>
+    yourname.innerHTML = "Name?<input id=bottle><button onclick='restart()'>Restart</button><button onclick=generate_alltime_leaderboard()>All-time leaderboard</button>"
     noLoop()
     }
   }
+
 function restart () {
   let bottle = document.getElementById("bottle")
   name = bottle.value
