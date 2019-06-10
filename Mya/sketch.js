@@ -173,7 +173,7 @@ function restart () {
     scoreboard[name] = score
   }
   "Scoreboard: " +
-  alert(JSON.stringify(Scoreboard,null,1))
+  alert(JSON.stringify(scoreboard,null,1))
   time = 60
   score = 0
   size = 100
