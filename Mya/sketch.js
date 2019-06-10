@@ -141,6 +141,16 @@ function draw() {
   }
   if (keyIsDown(DOWN_ARROW) && y < height) {
     y = y + 8
+
+if (touches.length == 0)   {
+
+	controls for main character
+
+}
+	  else { 
+		x = touches[0].x
+		y = touches[0].y
+}
   }
   
   textSize(30)
