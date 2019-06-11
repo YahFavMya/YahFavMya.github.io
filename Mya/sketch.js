@@ -129,7 +129,8 @@ function draw() {
     if (w > height || w < 0) {
     direction_v2 = direction_v2 * -1
   }
-  
+  if (touches.length == 0)   {
+
   if (keyIsDown(RIGHT_ARROW) && x < width) {
     x = x + 8
   }
@@ -142,15 +143,12 @@ function draw() {
   if (keyIsDown(DOWN_ARROW) && y < height) {
     y = y + 8
 
-if (touches.length == 0)   {
-
-	controls for main character
-
-}
+  }
+  }
 	  else { 
 		x = touches[0].x
 		y = touches[0].y
-}
+
   }
   
   textSize(30)
